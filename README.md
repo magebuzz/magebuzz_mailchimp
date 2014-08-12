@@ -1,0 +1,2 @@
+magebuzz_mailchimp
+==================
