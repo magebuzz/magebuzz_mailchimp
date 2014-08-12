@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<config>
+  <tabs>
+    <magebuzz translate="label">
+      <label>Magebuzz Extension</label>
+      <sort_order>200</sort_order>
+    </magebuzz>
+  </tabs>
+  <sections>
+    <mailchimp translate="label" module="mailchimp">
+      <label>Mailchimp</label>
+      <tab>magebuzz</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>299</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>1</show_in_website>
+      <show_in_store>1</show_in_store>
+      <groups>
+        <general translate="label">
+          <label>Mailchimp Configuration</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>1</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+            <active_mailchimp translate="label">
+              <label>Enabled</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>10</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </active_mailchimp>
+            <apikey translate="label comment">
+              <label>API Key</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>20</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>1</show_in_store>
+              <comment><![CDATA[Please click the button below to get your API key.]]></comment>
+            </apikey>
+            <oauth_wizard translate="button_label">
+              <label></label>
+              <button_label>Get API credentials</button_label>
+              <frontend_model>mailchimp/adminhtml_system_config_oauthWizard</frontend_model>
+              <sort_order>22</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>1</show_in_store>
+            </oauth_wizard>
+            <list translate="label comment">
+              <label>Choose Mailchimp customer list</label>
+              <frontend_type>select</frontend_type>
+              <source_model>mailchimp/system_config_source_list</source_model>
+              <sort_order>30</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>1</show_in_store>
+              <can_be_empty>1</can_be_empty>
+              <comment>Synchronize Magento's General Subscription List with this MailChimp list</comment>
+            </list>
+            <show_firstname translate="label">
+              <label>Show First name</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>50</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </show_firstname>
+            <show_lastname translate="label">
+              <label>Show Last name</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>60</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </show_lastname>
+            <!--<email_sender translate="label comment">
+              <label>Email Sender</label>
+              <comment><![CDATA[Enter the email sender]]></comment>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_email_identity</source_model>
+              <sort_order>1</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </email_sender>
+            <email_template translate="label comment">
+              <label>Email Template for email list</label>
+              <comment><![CDATA[Select an email template]]></comment>
+              <frontend_type>select</fron	tend_type>
+              <source_model>adminhtml/system_config_source_email_template</source_model>
+              <sort_order>2</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </email_template>-->
+          </fields>
+        </general>
+      </groups>
+    </mailchimp>
+  </sections>
+</config>

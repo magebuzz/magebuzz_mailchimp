@@ -1,0 +1,8 @@
+app/code/community/Magebuzz/Mailchimp  app/code/community/Magebuzz/Mailchimp
+app/design/adminhtml/default/default/template/mailchimp  app/design/adminhtml/default/default/template/mailchimp
+app/design/frontend/base/default/template/mailchimp  app/design/frontend/base/default/template/mailchimp
+app/design/frontend/base/default/template/newsletter  app/design/frontend/base/default/template/newsletter
+app/design/frontend/rwd/default/template/mailchimp  app/design/frontend/rwd/default/template/mailchimp
+app/design/frontend/rwd/default/template/newsletter  app/design/frontend/rwd/default/template/newsletter
+app/etc/modules/Magebuzz_Mailchimp.xml  app/etc/modules/Magebuzz_Mailchimp.xml
+app/locale/en_US/Magebuzz_Mailchimp.csv  app/locale/en_US/Magebuzz_Mailchimp.csv

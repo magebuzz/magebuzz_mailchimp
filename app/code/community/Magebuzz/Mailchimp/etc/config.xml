@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<config>
+  <!-- module -->
+  <modules>
+    <Magebuzz_Mailchimp>
+      <version>0.1.1</version>
+    </Magebuzz_Mailchimp>
+  </modules>
+  <!-- frontend -->
+  <frontend>
+    <secure_url>
+      <mailchimp>/mailchimp/</mailchimp>
+    </secure_url>
+    <routers>
+      <mailchimp>
+        <use>standard</use>
+        <args>
+          <module>Magebuzz_Mailchimp</module>
+          <frontName>mailchimp</frontName>
+        </args>
+      </mailchimp>
+    </routers>
+    <layout>
+      <updates>
+        <mailchimp>
+          <file>mailchimp.xml</file>
+        </mailchimp>
+      </updates>
+    </layout>
+  </frontend>
+  <!-- admin -->
+  <admin>
+    <routers>
+      <mailchimp>
+        <use>admin</use>
+        <args>
+          <module>Magebuzz_Mailchimp</module>
+          <frontName>mailchimp</frontName>
+        </args>
+      </mailchimp>
+    </routers>
+  </admin>
+  <!-- adminhtml -->
+  <adminhtml>
+    <layout>
+      <updates>
+        <mailchimp>
+          <file>mailchimp.xml</file>
+        </mailchimp>
+      </updates>
+    </layout>
+  </adminhtml>
+  <!-- global -->
+  <global>
+    <models>
+      <mailchimp>
+        <class>Magebuzz_Mailchimp_Model</class>
+        <resourceModel>mailchimp_mysql4</resourceModel>
+      </mailchimp>
+      <mailchimp_mysql4>
+        <class>Magebuzz_Mailchimp_Model_Mysql4</class>
+        <entities>
+          <mailchimp>
+            <table>mailchimp</table>
+          </mailchimp>
+        </entities>
+      </mailchimp_mysql4>
+    </models>
+    <!-- resources -->
+    <resources>
+      <mailchimp_setup>
+        <setup>
+          <module>Magebuzz_Mailchimp</module>
+        </setup>
+        <connection>
+          <use>core_setup</use>
+        </connection>
+      </mailchimp_setup>
+      <mailchimp_write>
+        <connection>
+          <use>core_write</use>
+        </connection>
+      </mailchimp_write>
+      <mailchimp_read>
+        <connection>
+          <use>core_read</use>
+        </connection>
+      </mailchimp_read>
+    </resources>
+    <!-- blocks -->
+    <blocks>
+      <mailchimp>
+        <class>Magebuzz_Mailchimp_Block</class>
+      </mailchimp>
+    </blocks>
+    <!-- helpers -->
+    <helpers>
+      <mailchimp>
+        <class>Magebuzz_Mailchimp_Helper</class>
+      </mailchimp>
+    </helpers>
+    <template>
+      <email>
+        <mailchimp_general_email_template>
+          <label>Title Email</label>
+          <file>mailchimp_example.html</file>
+          <type>html</type>
+        </mailchimp_general_email_template>
+      </email>
+    </template>
+  </global>
+  <!--Set Default Value For Setting Options-->
+  <default>
+    <mailchimp>
+      <custom_groupings>
+        <segment_grouping_name><![CDATA[MAGE_CUSTOMER_SEGMENTS]]></segment_grouping_name>
+      </custom_groupings>
+      <general>
+        <active_mailchimp>1</active_mailchimp>
+        <show_firstname>1</show_firstname>
+        <show_lastname>1</show_lastname>
+        <!-- <email_template>mailchimp_general_email_template</email_template>
+        <email_sender>custom2</email_sender> -->
+      </general>
+    </mailchimp>
+  </default>
+  <translate>
+    <modules>
+      <Magebuzz_Mailchimp>
+        <files>
+          <default>Magebuzz_Mailchimp.csv</default>
+        </files>
+      </Magebuzz_Mailchimp>
+    </modules>
+  </translate>
+</config>

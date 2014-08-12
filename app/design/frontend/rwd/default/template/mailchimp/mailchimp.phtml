@@ -1,0 +1,43 @@
+<?php if (Mage::helper('mailchimp/config')->isActiveMailchimp()): ?>
+  <div class="block block-subscribe">
+    <div class="block-title">
+      <strong><span><?php echo $this->__('Newsletter Mailchimp') ?></span></strong>
+    </div>
+    <form action="<?php echo $this->getFormAction(); ?>" method="post" id="newsletter-mailchimp-form">
+      <div class="block-content">
+        <div class="form-subscribe-header">
+          <label for="newsletter"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
+        </div>
+        <div class="input-box">
+          <strong><?php echo $this->__('Email'); ?></strong><input type="text" name="email"
+                                                                   class="input-text required-entry validate-email"
+                                                                   id="newsletter"
+                                                                   title="<?php echo $this->__('Sign up for our newsletter') ?>"/>
+        </div>
+        <?php if (Mage::helper('mailchimp/config')->isShowFirstName()): ?>
+          <div class="input-box">
+            <strong><?php echo $this->__('First Name'); ?></strong><input class="input-text required-entry" type="text"
+                                                                          name="first_name" id="first_name"
+                                                                          title="<?php echo $this->__('First name') ?>"/>
+          </div>
+        <?php endif ?>
+        <?php if (Mage::helper('mailchimp/config')->isShowLastName()): ?>
+          <div class="input-box">
+            <strong><?php echo $this->__('Last Name'); ?></strong><input class="input-text required-entry" type="text"
+                                                                         name="last_name" id="last_name"
+                                                                         title="<?php echo $this->__('Last name') ?>"/>
+          </div>
+        <?php endif ?>
+        <div class="actions">
+          <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button">
+            <span><span><?php echo $this->__('Subscribe') ?></span></span></button>
+        </div>
+      </div>
+    </form>
+    <script type="text/javascript">
+      //<![CDATA[
+      var newsletterMailchimp = new VarienForm('newsletter-mailchimp-form');
+      //]]>
+    </script>
+  </div>
+<?php endif ?>
